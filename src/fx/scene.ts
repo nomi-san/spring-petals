@@ -15,14 +15,14 @@ export function initScene(rootSelector = '#app') {
   if (!app) throw new Error('Missing root element')
 
   app.innerHTML = `
-    <div class="scene" role="img" aria-label="Dynamic background">
-      <img class="scene__bg" src="${background_img}" alt="" />
-      <canvas class="scene__fx" aria-hidden="true"></canvas>
+    <div class="ps__scene" role="img" aria-label="Dynamic background">
+      <img class="ps__scene__bg" src="${background_img}" alt="" />
+      <canvas class="ps__scene__fx" aria-hidden="true"></canvas>
     </div>
   `
 
   // Transparent WebGL canvas sits on top of the static background image.
-  const canvas = app.querySelector<HTMLCanvasElement>('.scene__fx')!
+  const canvas = app.querySelector<HTMLCanvasElement>('.ps__scene__fx')!
   if (!canvas) throw new Error('Missing canvas')
 
   // WebGL2 is required for instanced drawing used by particles.
